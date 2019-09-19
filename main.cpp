@@ -28,10 +28,20 @@ int main() {
     vector<int> t(length);  // temporary workspace
     // unit test for merge
 
-    vector<int> test = {47, 23, 71, 6};
-    vector<int> testTwo(4);
+    vector<int> test = {3, 8, 11, 9, 10, 15};
+    vector<int> testTwo(6);
 
-    mergeSort(test, testTwo, 0, 3);
+    cout << "Unit Test - Expected Answer: 3 8 9 10 11 15" << endl;
+
+    mergeSortedLists(test, testTwo, 0, 2, 5);
+
+    cout << "Unit Test - Actual Answer: ";
+    for(int i = 0; i < test.size(); i++)
+    {
+        cout << test.at(i) << " ";
+    }
+    cout << endl;
+    cout << endl;
 
     //testing the test array
     for(int i = 1; i < test.size() - 1; i++) {
@@ -39,6 +49,7 @@ int main() {
     }
 
     // initialize and print input
+    cout << "Random Seed Test - Initial Vector: ";
     for(int i = 0; i < v.size(); i++) {
         v.at(i) = rand() % 100;
         cout << v.at(i) << '\t';
@@ -52,6 +63,7 @@ int main() {
     // check output, make sure it's sorted
 
     // print ending output
+    cout << "Random Seed Test - Sorted Vector: ";
     for(int i = 0; i < v.size(); i++) {
         cout << v.at(i) << '\t';
     }
